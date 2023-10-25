@@ -1,10 +1,12 @@
 <script setup>
 import { vaah } from '../../../vaahvue/pinia/vaah'
 import { useCustomerStore } from '../../../stores/store-customers'
+
 import router from "../../../../../Product/Vue/routes/router";
 
 const store = useCustomerStore();
 const useVaah = vaah();
+
 
 </script>
 
@@ -27,17 +29,15 @@ const useVaah = vaah();
             <Column field="id" header="ID" :style="{width: store.getIdWidth()}" :sortable="true">
             </Column>
 
-            <Column field="name" header="Name"
-                    :sortable="true">
-
-                <template #body="prop">
-                    <Badge v-if="prop.data.deleted_at"
-                           value="Trashed"
-                           severity="danger"></Badge>
-                    {{prop.data.name}}
-                </template>
-
-            </Column>
+<!--            <Column field="name" header="Name"-->
+<!--                    :sortable="true">-->
+<!--                <template #body="prop">-->
+<!--                    <Badge v-if="prop.data.deleted_at"-->
+<!--                           value="Trashed"-->
+<!--                           severity="danger"></Badge>-->
+<!--                    {{prop.data.name}}-->
+<!--                </template>-->
+<!--            </Column>-->
              <Column header="Name" :sortable="true">
 
                  <template #body="prop">
@@ -60,11 +60,7 @@ const useVaah = vaah();
                  </template>
              </Column>
 
-             <Column  header="Country" :sortable="true"  v-if="store.isViewLarge()" >
-                 <template #body="prop">
-                     <Button severity="info" rounded>{{prop.data.country_name}}</Button>
-                 </template>
-             </Column>
+
 
              <Column field="updated_at" header="Updated"
                         v-if="store.isViewLarge()"
@@ -74,6 +70,12 @@ const useVaah = vaah();
                         {{useVaah.toLocalTimeShortFormat(prop.data.updated_at)}}
                  </template>
              </Column>
+             <Column  header="Country" :sortable="true"  v-if="store.isViewLarge()" >
+                 <template #body="prop">
+                     <Button severity="info" rounded>{{prop.data.country_name}}</Button>
+                 </template>
+             </Column>
+
 
             <Column field="is_active" v-if="store.isViewLarge()"
                     :sortable="true"
