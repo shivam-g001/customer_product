@@ -3,6 +3,14 @@ document.title = 'CustomerChannel';
 </script>
 <template>
 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+  <div style="margin-top: 8px;">
+    <h1 class="text-4xl">Dashboard</h1>
+  </div>
+=======
+>>>>>>> bugfix
     <div style="margin-top: 8px;">
         <h1 class="text-4xl">Dashboard</h1>
         <div class="flex justify-content-center">
@@ -1680,12 +1688,20 @@ document.title = 'CustomerChannel';
                             </svg> </a>
 
                         </div>
+<<<<<<< HEAD
                         <a class="button" href="https://www.linkedin.com/in/sumanmca" target="_blank">Contact Me</a>
+=======
+                        <a class="button" href="https://github.com/shivam-g001" target="_blank">Contact Me</a>
+>>>>>>> bugfix
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> bugfix
 
 </template>
 <style scoped>
