@@ -459,38 +459,7 @@ class Customer extends Model
     }
 
     //-------------------------------------------------
-//    public static function deleteList($request): array
-//    {
-//        $inputs = $request->all();
-//
-//        $rules = array(
-//            'type' => 'required',
-//            'items' => 'required',
-//        );
-//
-//        $messages = array(
-//            'type.required' => 'Action type is required',
-//            'items.required' => 'Select items',
-//        );
-//
-//        $validator = \Validator::make($inputs, $rules, $messages);
-//        if ($validator->fails()) {
-//
-//            $errors = errorsToArray($validator->errors());
-//            $response['success'] = false;
-//            $response['errors'] = $errors;
-//            return $response;
-//        }
-//
-//        $items_id = collect($inputs['items'])->pluck('id')->toArray();
-//        self::whereIn('id', $items_id)->forceDelete();
-//
-//        $response['success'] = true;
-//        $response['data'] = true;
-//        $response['messages'][] = 'Action was successful.';
-//
-//        return $response;
-//    }
+
     public static function deleteList($request): array
     {
         $inputs = $request->all();
