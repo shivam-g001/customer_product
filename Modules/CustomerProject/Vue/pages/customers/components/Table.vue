@@ -75,6 +75,7 @@ const useVaah = vaah();
                      <Button severity="info" rounded>{{prop.data.country_name}}</Button>
                  </template>
              </Column>
+             
 
 
             <Column field="is_active" v-if="store.isViewLarge()"
