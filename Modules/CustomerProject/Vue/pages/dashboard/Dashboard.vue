@@ -2,16 +2,11 @@
 document.title = 'CustomerProject';
 </script>
 <template  >
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
+    
   <div style="margin-top: 8px;">
     <h1 class="text-4xl">Dashboard</h1>
   </div>
-=======
->>>>>>> bugfix
+
     <div style="margin-top: 8px;">
         <h1 class="text-4xl">Dashboard</h1>
         <div class="flex justify-content-center">
@@ -1689,25 +1684,20 @@ document.title = 'CustomerProject';
                             </svg> </a>
 
                         </div>
-<<<<<<< HEAD
+
                         <a class="button" href="https://www.linkedin.com/in/sumanmca" target="_blank">Contact Me</a>
-=======
+
                         <a class="button" href="https://github.com/shivam-g001" target="_blank">Contact Me</a>
->>>>>>> bugfix
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> bugfix
-=======
+
   <div style="margin-top: 8px;">
     <h1 class="text-4xl">Dashboard</h1>
   </div>
->>>>>>> parent of 26f55e0... Merge pull request #3 from suman-k001/patch-1
 
 </template>
 
