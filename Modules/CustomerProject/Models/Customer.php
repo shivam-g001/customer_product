@@ -106,6 +106,8 @@ class Customer extends Model
     }
 
 
+
+
     //-------------------------------------------------
     protected function serializeDate(DateTimeInterface $date)
     {
