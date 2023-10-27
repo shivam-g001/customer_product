@@ -83,22 +83,7 @@ class ProductsController extends Controller
             return $response;
         }
     }
-//    public function getListByCustomer(Request $request)
-//    {
-//        try{
-//            return Product::getListByCustomer($request);
-//        }catch (\Exception $e){
-//            $response = [];
-//            $response['success'] = false;
-//            if(env('APP_DEBUG')){
-//                $response['errors'][] = $e->getMessage();
-//                $response['hint'] = $e->getTrace();
-//            } else{
-//                $response['errors'][] = 'Something went wrong.';
-//            }
-//            return $response;
-//        }
-//    }
+
     //----------------------------------------------------------
     public function updateList(Request $request)
     {

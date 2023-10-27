@@ -381,39 +381,7 @@ class Product extends Model
     }
 
 
-    public static function getListByCustomer($request)
-    {
-        $list = self::getSorted($request->filter);
-        $list->isActiveFilter($request->filter);
-        $list->trashedFilter($request->filter);
-        $list->searchFilter($request->filter);
-        $list->statusFilter($request->filter);
-        /*$list->with(['customers:id,name']);*/
 
-        /*if ($request->has('customer_id')) {
-            $customer_id = $request->input('customer_id');
-            $list->whereHas('customers', function ($query) use ($customer_id) {
-                $query->where('id', $customer_id);
-            });
-        }*/
-
-        $rows = config('vaahcms.per_page');
-
-        if($request->has('rows'))
-        {
-            $rows = $request->rows;
-        }
-
-        $list = $list->paginate($rows);
-//        $list = $list->with(['customers:id,name'])->paginate($rows);
-
-        $response['success'] = true;
-        $response['data'] = $list;
-
-        return $response;
-
-
-    }
 
     //-------------------------------------------------
     public static function updateList($request)
