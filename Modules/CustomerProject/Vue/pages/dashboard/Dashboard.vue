@@ -1,13 +1,9 @@
 <script  setup>
 document.title = 'CustomerProject';
 </script>
-<template  >
+<template>
 
-<<<<<<< Updated upstream
-  <div style="margin-top: 8px;">
-    <h1 class="text-4xl">Dashboard</h1>
-  </div>
-=======
+
     <div style="margin-top: 8px;">
         <h1 class="text-4xl">Dashboard</h1>
         <div class="flex justify-content-center">
@@ -1691,7 +1687,7 @@ document.title = 'CustomerProject';
             </div>
         </div>
     </div>
->>>>>>> Stashed changes
+
 
 </template>
 
