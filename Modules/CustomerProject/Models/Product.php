@@ -5,6 +5,7 @@ use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Faker\Factory;
 use VaahCms\Modules\Product\Models\Blog;
@@ -64,26 +65,25 @@ class Product extends Model
         $blog=Blog::all();
         return $blog ;
     }
+
     public static function autoCompleteSearch(Request $request): array
     {
+
+        $user = Auth::user();
+
         $query = $request->input('filter.q.query');
-        if($query === null)
-        {
-            $products = Customer::select('id','name','slug')
-                ->inRandomOrder()
-                ->take(10)
-                ->get();
+        $customers = Customer::where('created_by', $user->id)
+            ->select('id', 'name', 'slug');
+
+        if ($query !== null) {
+            $customers->where('name', 'like', "%$query%");
         }
 
-        else{
-
-            $products = Customer::where('name', 'like', "%$query%")
-                ->select('id','name','slug')
-                ->get();
-        }
+        $customers = $customers->get();
 
         $response['success'] = true;
-        $response['data'] = $products;
+        $response['data'] = $customers;
+
         return $response;
     }
 
@@ -341,6 +341,7 @@ class Product extends Model
     //-------------------------------------------------
     public static function getList($request)
     {
+        $user = Auth::user();
         $list = self::getSorted($request->filter);
         $list->isActiveFilter($request->filter);
         $list->trashedFilter($request->filter);
@@ -348,6 +349,7 @@ class Product extends Model
         $list->statusFilter($request->filter);
         $list->categoryFilter($request->filter);
         $list->with(['blog:id,name']);
+        $list->where('created_by', $user->id);
 //        $list->customerFilter($request->filter);
 
         $list->with(['customers:id,name,slug']);
