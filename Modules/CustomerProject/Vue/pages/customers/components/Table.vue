@@ -84,6 +84,8 @@ const useVaah = vaah();
                     header="Is Active">
 
                 <template #body="prop">
+
+                    {{prop.data.is_active}}
                     <InputSwitch v-model.bool="prop.data.is_active"
                                  data-testid="customers-table-is-active"
                                  v-bind:false-value="0"  v-bind:true-value="1"
