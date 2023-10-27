@@ -359,49 +359,7 @@ class Customer extends Model
     }
 
     //-------------------------------------------------
-//    public static function getList($request)
-//    {
-//        $list = self::getSorted($request->filter);
-//        $list->isActiveFilter($request->filter);
-//        $list->trashedFilter($request->filter);
-//        $list->searchFilter($request->filter);
-//
-//
-//        $rows = config('vaahcms.per_page');
-//
-//        if($request->has('rows'))
-//        {
-//            $rows = $request->rows;
-//        }
-//
-////        $list = $list->paginate($rows);
-//
-//        $list->withCount('products');
-//
-//        // Paginate the results
-//        $list = $list->paginate($rows);
-//
-//        $country_id = $list->pluck('country_id')->unique()->toArray();
-//        $country_name = DB::table('vh_taxonomies')
-//            ->whereIn('id', $country_id)
-//            ->pluck('name', 'id');
-//        $state_id = $list->pluck('state_id')->unique()->toArray();
-//        $state_name = DB::table('vh_taxonomies')
-//            ->whereIn('id', $state_id)
-//            ->pluck('name', 'id');
-//
-//        $list->each(function ($item) use ($country_name, $state_name) {
-//            $item->country_name = $country_name[$item->country_id] ?? 'N/A';
-//            $item->state_name = $state_name[$item->state_id] ?? 'N/A';
-//        });
-//
-//        $response['success'] = true;
-//        $response['data'] = $list;
-//
-//        return $response;
-//
-//
-//    }
+
     public static function getList($request)
     {
         $user = Auth::user();
