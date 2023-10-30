@@ -762,7 +762,6 @@ class Customer extends Model
     }
 
     //-------------------------------------------------
-    //-------------------------------------------------
 
     public static function seedSampleItems($total_records)
     {
