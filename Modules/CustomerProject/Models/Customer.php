@@ -327,20 +327,7 @@ class Customer extends Model
 
     }
     //-------------------------------------------------
-//    public function scopeSearchFilter($query, $filter)
-//    {
-//
-//        if(!isset($filter['q']))
-//        {
-//            return $query;
-//        }
-//        $search = $filter['q'];
-//        $query->where(function ($q) use ($search) {
-//            $q->where('name', 'LIKE', '%' . $search . '%')
-//                ->orWhere('slug', 'LIKE', '%' . $search . '%');
-//        });
-//
-//    }
+
     public function scopeSearchFilter($query, $filter)
     {
         if (!isset($filter['q'])) {
