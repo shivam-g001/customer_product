@@ -812,8 +812,6 @@ class Customer extends Model
         return $response;
     }
 
-  
-
 
 
 }
