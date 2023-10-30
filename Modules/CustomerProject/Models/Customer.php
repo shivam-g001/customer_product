@@ -327,20 +327,7 @@ class Customer extends Model
 
     }
     //-------------------------------------------------
-//    public function scopeSearchFilter($query, $filter)
-//    {
-//
-//        if(!isset($filter['q']))
-//        {
-//            return $query;
-//        }
-//        $search = $filter['q'];
-//        $query->where(function ($q) use ($search) {
-//            $q->where('name', 'LIKE', '%' . $search . '%')
-//                ->orWhere('slug', 'LIKE', '%' . $search . '%');
-//        });
-//
-//    }
+
     public function scopeSearchFilter($query, $filter)
     {
         if (!isset($filter['q'])) {
@@ -749,12 +736,7 @@ class Customer extends Model
     public static function notify($id)
     {
         $user = \VaahCms\Modules\CustomerProject\Models\User::find($id);
-//        $user = Customer::findOrFail($id);
-
         $notification = Notification::where('slug', "send-welcome-email")->first();
-
-
-
         if ($notification) {
             $inputs = [
                 "user_id" => $user->id,
@@ -779,7 +761,6 @@ class Customer extends Model
         return $item;
     }
 
-    //-------------------------------------------------
     //-------------------------------------------------
 
     public static function seedSampleItems($total_records)
@@ -831,9 +812,7 @@ class Customer extends Model
         return $response;
     }
 
-    //-------------------------------------------------
-    //-------------------------------------------------
-    //-------------------------------------------------
+  
 
 
 
