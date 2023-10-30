@@ -736,7 +736,7 @@ class Customer extends Model
     public static function notify($id)
     {
         $user = \VaahCms\Modules\CustomerProject\Models\User::find($id);
-//        $user = Customer::findOrFail($id);
+
 
         $notification = Notification::where('slug', "send-welcome-email")->first();
 
