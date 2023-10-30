@@ -128,45 +128,6 @@ class CustomersController extends Controller
         }
     }
 
-//    public function listAction(Request $request, $type)
-//    {
-//        try {
-//            // Call the listAction method from the Customer model
-//            $response = Customer::listAction($request, $type);
-//
-//            // Check if the action was successful
-//            if ($response['success']) {
-//                // Dispatch the FillItemJob when the action is successful
-//                if ($type == 'create-100-records' || $type == 'create-1000-records' || $type == 'create-5000-records' || $type == 'create-10000-records') {
-//                    $is_response_return = true; // Set this based on your requirements
-//                    Queue::push(new FillItemJob($is_response_return));
-//                }
-//
-//                return response()->json([
-//                    'success' => true,
-//                    'data' => $response['data'],
-//                    'messages' => ['Action was successful.'],
-//                ]);
-//            } else {
-//                return response()->json([
-//                    'success' => false,
-//                    'errors' => $response['errors'],
-//                ], 400);
-//            }
-//        } catch (\Exception $e) {
-//            $response = [];
-//            $response['success'] = false;
-//
-//            if (env('APP_DEBUG')) {
-//                $response['errors'][] = $e->getMessage();
-//                $response['hint'] = $e->getTrace();
-//            } else {
-//                $response['errors'][] = 'Something went wrong.';
-//            }
-//
-//            return response()->json($response, 500);
-//        }
-//    }
 
     //----------------------------------------------------------
     public function deleteList(Request $request)
